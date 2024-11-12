@@ -34,6 +34,7 @@ class TerminalEffect { // 定义TerminalEffect类
     }
 
     calculateDaysSince() {
+        
         const startDate = new Date('2022-07-27T08:20:00');
         const now = new Date();
         const diffTime = Math.abs(now - startDate);
