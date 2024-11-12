@@ -16,7 +16,7 @@ class TerminalEffect { // 定义TerminalEffect类
             '    }',
             '',
             '    generateWishes() {', // 生成祝福的方法
-            '        this.wishes.push("生日快乐！");', // 添加祝福
+            '        this.wishes.push("玉酱生日快乐！");', // 添加祝福
             '        this.wishes.push("永远开心！");', // 添加祝福
             '        this.wishes.push("梦想成真！");', // 添加祝福
             '        this.wishes.push("前程似锦！");', // 添加祝福
@@ -26,10 +26,22 @@ class TerminalEffect { // 定义TerminalEffect类
             '[EXECUTING] sending wishes...', // 执行发送祝福
             '[SUCCESS] wishes delivered ❤️', // 祝福发送成功
             '',
-            '> Happy Birthday, Tingyu! 🎂' // 输出生日祝福
+            '> Happy Birthday, Tingyu! 🎂',
+            this.calculateDaysSince() // 计算天数
         ];
         this.currentLine = 0; // 当前行索引
         this.typeWriter(); // 开始打字效果
+    }
+
+    calculateDaysSince() {
+        const startDate = new Date('2022-07-27T08:20:00');
+        const now = new Date();
+        const diffTime = Math.abs(now - startDate);
+        const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+        const diffHours = Math.floor((diffTime / (1000 * 60 * 60)) % 24);
+        const diffMinutes = Math.floor((diffTime / (1000 * 60)) % 60);
+        const diffSeconds = Math.floor((diffTime / 1000) % 60);
+        return `和婷玉相遇 ${diffDays} 天 ${diffHours} 小时 ${diffMinutes} 分钟 ${diffSeconds} 秒`;
     }
 
     typeWriter() { // 打字效果的方法
