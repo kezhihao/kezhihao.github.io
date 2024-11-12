@@ -167,8 +167,9 @@ body {
 .terminal {
     position: fixed;
     bottom: 20px;
-    left: 20px;
-    width: 600px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(600px, 90%);
     background: rgba(0, 0, 0, 0.9);
     border: 1px solid #0f0;
     border-radius: 6px;
@@ -190,8 +191,8 @@ body {
 }
 
 .terminal-button {
-    width: 12px;
-    height: 12px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
@@ -203,14 +204,14 @@ body {
 .terminal-title {
     color: #0f0;
     margin-left: 20px;
-    font-size: 0.9em;
+    font-size: 0.8em;
 }
 
 .terminal-content {
     padding: 15px;
-    height: 300px;
+    height: 200px;
     overflow-y: auto;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 1.5;
 }
 
@@ -253,4 +254,58 @@ canvas {
         text-shadow: -0.05em 0 0 #00fffc, -0.025em -0.04em 0 #fc00ff,
                      -0.04em -0.025em 0 #fffc00;
     }
+}
+
+/* 添加移动端媒体查询 */
+@media screen and (max-width: 768px) {
+    /* 主标题文字大小调整 */
+    .glitch {
+        font-size: 2em; /* 减小手机上的字体大小 */
+    }
+
+    /* 终端窗口调整 */
+    .terminal {
+        width: 90%; /* 宽度改为相对值 */
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 10px;
+    }
+
+    .terminal-content {
+        height: 200px; /* 减小终端高度 */
+        font-size: 12px; /* 减小终端文字大小 */
+    }
+
+    /* 调整终端按钮大小 */
+    .terminal-button {
+        width: 8px;
+        height: 8px;
+    }
+
+    .terminal-title {
+        font-size: 0.8em;
+    }
+}
+
+/* 添加横屏模式的优化 */
+@media screen and (max-height: 500px) {
+    .main-message {
+        top: 30%;
+    }
+
+    .terminal {
+        height: 150px;
+    }
+
+    .terminal-content {
+        height: 100px;
+    }
+}
+
+/* 确保主消息在小屏幕上也能完整显示 */
+.main-message {
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    word-break: break-word;
 } 

@@ -59,7 +59,7 @@ class MatrixRain {
         document.body.appendChild(this.canvas);
         this.ctx = this.canvas.getContext('2d');
         this.characters = '婷玉生日快乐HAPPY BIRTHDAY!❤️🎂✨';
-        this.fontSize = 16;
+        this.fontSize = window.innerWidth <= 768 ? 12 : 16;
         this.columns = 0;
         this.drops = [];
         
@@ -71,6 +71,7 @@ class MatrixRain {
     resize() {
         this.canvas.width = window.innerWidth;
         this.canvas.height = window.innerHeight;
+        this.fontSize = window.innerWidth <= 768 ? 12 : 16;
         this.columns = Math.floor(this.canvas.width / this.fontSize);
         this.drops = Array(this.columns).fill(1);
     }
