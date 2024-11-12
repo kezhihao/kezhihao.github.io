@@ -166,20 +166,20 @@ body {
 /* 终端样式 */
 .terminal {
     position: fixed;
-    bottom: 0;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    width: min(600px, 90%);
+    width: min(300px, 80%);
     background: rgba(0, 0, 0, 0.9);
     border: 1px solid #0f0;
-    border-radius: 6px 6px 0 0;
+    border-radius: 6px;
     box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
     z-index: 1000;
 }
 
 .terminal-header {
     background: #1a1a1a;
-    padding: 8px;
+    padding: 4px;
     border-bottom: 1px solid #0f0;
     display: flex;
     align-items: center;
@@ -191,8 +191,8 @@ body {
 }
 
 .terminal-button {
-    width: 8px;
-    height: 8px;
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
@@ -203,16 +203,16 @@ body {
 
 .terminal-title {
     color: #0f0;
-    margin-left: 20px;
-    font-size: 0.8em;
+    margin-left: 10px;
+    font-size: 0.7em;
 }
 
 .terminal-content {
-    padding: 15px;
-    height: 150px;
+    padding: 10px;
+    height: 100px;
     overflow-y: auto;
-    font-size: 12px;
-    line-height: 1.5;
+    font-size: 10px;
+    line-height: 1.4;
 }
 
 /* 矩阵雨效果 */
@@ -265,26 +265,25 @@ canvas {
 
     /* 终端窗口调整 */
     .terminal {
-        width: 100%;
-        bottom: 0;
-        border-radius: 0;
-        border-left: none;
-        border-right: none;
-        border-bottom: none;
+        bottom: 20px;
+        width: min(280px, 80%);
+        border-radius: 6px;
     }
 
     .terminal-content {
-        height: 120px;
+        height: 80px;
+        font-size: 9px;
     }
 
     /* 调整终端按钮大小 */
     .terminal-button {
-        width: 8px;
-        height: 8px;
+        width: 6px;
+        height: 6px;
     }
 
     .terminal-title {
-        font-size: 0.8em;
+        font-size: 0.7em;
+        margin-left: 10px;
     }
 }
 
