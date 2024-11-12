@@ -26,7 +26,7 @@ body {
     left: 50%;
     transform: translateX(-100%);
     margin-bottom: 80px;         /* 底部边距 - 可调整 */
-    margin-left: 20px;           /* 向右偏移 - 可调整 */
+    margin-left: 160px;           /* 向右偏移 - 可调整 */
     grid-row: 3;                  /* 放在最后一行 */
     place-self: end center;       /* 底部居中 */
     width: min(280px, 85%);
