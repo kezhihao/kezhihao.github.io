@@ -166,13 +166,13 @@ body {
 /* 终端样式 */
 .terminal {
     position: fixed;
-    bottom: 20px;
+    bottom: 0;
     left: 50%;
     transform: translateX(-50%);
     width: min(600px, 90%);
     background: rgba(0, 0, 0, 0.9);
     border: 1px solid #0f0;
-    border-radius: 6px;
+    border-radius: 6px 6px 0 0;
     box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
     z-index: 1000;
 }
@@ -209,7 +209,7 @@ body {
 
 .terminal-content {
     padding: 15px;
-    height: 200px;
+    height: 150px;
     overflow-y: auto;
     font-size: 12px;
     line-height: 1.5;
@@ -265,15 +265,16 @@ canvas {
 
     /* 终端窗口调整 */
     .terminal {
-        width: 90%; /* 宽度改为相对值 */
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: 10px;
+        width: 100%;
+        bottom: 0;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+        border-bottom: none;
     }
 
     .terminal-content {
-        height: 200px; /* 减小终端高度 */
-        font-size: 12px; /* 减小终端文字大小 */
+        height: 120px;
     }
 
     /* 调整终端按钮大小 */
@@ -294,11 +295,11 @@ canvas {
     }
 
     .terminal {
-        height: 150px;
+        height: auto;
     }
 
     .terminal-content {
-        height: 100px;
+        height: 80px;
     }
 }
 
