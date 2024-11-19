@@ -29,9 +29,36 @@
             position: relative;
             z-index: 1;
         }
+
+        /* 添加音乐控制按钮样式 */
+        .music-control {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
     </style>
 </head>
 <body>
+    <!-- 添加音频元素 -->
+    <audio id="bgMusic" loop autoplay>
+        <source src="生日快乐.mp3" type="audio/mpeg">
+    </audio>
+    
+    <!-- 添加音乐控制按钮 -->
+    <button class="music-control" onclick="toggleMusic()">♫</button>
+
     <canvas id="matrix"></canvas>
     
     <!-- 主要祝福文字 -->
@@ -57,6 +84,40 @@
         <div class="terminal-content" id="terminalContent"></div>
     </div>
 
+    <script>
+        // 添加音乐控制函数
+        function toggleMusic() {
+            var music = document.getElementById('bgMusic');
+            if (music.paused) {
+                music.play();
+            } else {
+                music.pause();
+            }
+        }
+
+        // DOMContentLoaded时尝试播放
+        document.addEventListener('DOMContentLoaded', function() {
+            var music = document.getElementById('bgMusic');
+            music.volume = 0.5;
+            music.play();
+        });
+
+        // 页面加载完成后再次尝试播放
+        window.addEventListener('load', function() {
+            var music = document.getElementById('bgMusic');
+            music.volume = 0.5;
+            music.play();
+        });
+
+        // 监听用户交互以开始播放
+        document.addEventListener('click', function() {
+            var music = document.getElementById('bgMusic');
+            if (music.paused) {
+                music.play();
+            }
+        }, { once: true }); // once: true 确保只执行一次
+    </script>
+    
     <script src="script.js"></script>
 </body>
 </html> 
