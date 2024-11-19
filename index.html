@@ -47,6 +47,21 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: transform 0.5s ease;
+        }
+
+        /* 添加旋转动画 */
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .rotating {
+            animation: rotate 3s linear infinite;
         }
     </style>
 </head>
@@ -57,7 +72,7 @@
     </audio>
     
     <!-- 添加音乐控制按钮 -->
-    <button class="music-control" onclick="toggleMusic()">♫</button>
+    <button class="music-control rotating" onclick="toggleMusic()">♫</button>
 
     <canvas id="matrix"></canvas>
     
@@ -88,10 +103,14 @@
         // 添加音乐控制函数
         function toggleMusic() {
             var music = document.getElementById('bgMusic');
+            var button = document.querySelector('.music-control');
+            
             if (music.paused) {
                 music.play();
+                button.classList.add('rotating');
             } else {
                 music.pause();
+                button.classList.remove('rotating');
             }
         }
 
