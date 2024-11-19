@@ -17,8 +17,8 @@ class TerminalEffect { // 定义TerminalEffect类
             '',
             '    generateWishes() {', // 生成祝福的方法
             '        this.wishes.push("玉酱生日快乐！");', // 添加祝福
-            '        this.wishes.push("永远开心！");', // 添加祝福
-            '        this.wishes.push("梦想成真！");', // 添加祝福
+            '        this.wishes.push("玉玉永远开心！");', // 添加祝福
+            '        this.wishes.push("婷玉梦想成真！");', // 添加祝福
             '        this.wishes.push("前程似锦！");', // 添加祝福
             '    }',
             '}',
@@ -71,7 +71,7 @@ class MatrixRain { // 定义MatrixRain类
         this.canvas = document.createElement('canvas'); // 创建canvas元素
         document.body.appendChild(this.canvas); // 将canvas添加到文档主体
         this.ctx = this.canvas.getContext('2d'); // 获取canvas的2D上下文
-        this.characters = '婷玉生日快乐HAPPY BIRTHDAY!❤️🎂✨'; // 定义字符集
+        this.characters = '婷玉玉酱玉玉生日快乐HAPPY BIRTHDAY!❤️🎂✨'; // 定义字符集
         this.fontSize = 16; // 字体大小
         this.columns = 0; // 列数
         this.drops = []; // 存储每列的下落位置
@@ -117,7 +117,7 @@ class Firework { // 定义Firework类
         this.resize(); // 调整canvas大小
         this.fireworks = []; // 存储烟花
         this.particles = []; // 存储粒子
-        this.text = "祝婷玉生日快乐！"; // 定义烟花文本
+        this.text = "祝婷玉玉酱玉玉生日快乐！"; // 定义烟花文本
         
         window.addEventListener('resize', () => this.resize()); // 监听窗口大小变化
         this.animate(); // 开始动画
